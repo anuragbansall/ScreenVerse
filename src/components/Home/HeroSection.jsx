@@ -11,6 +11,8 @@ function HeroSection({trendingMovieData}) {
     const randomIdx = trendingMovieData && Math.floor(Math.random() * trendingMovieData.length)
     const trendingMovie = trendingMovieData && trendingMovieData[randomIdx]
 
+    const navigateTo = trendingMovie && `/${trendingMovie.media_type}/details/${trendingMovie.id}`
+
   return (
     <div className='relative w-full h-[22rem] bg-zinc-800'>
         <img src={`https://image.tmdb.org/t/p/original${trendingMovie?.backdrop_path || trendingMovie?.poster_path}`} className='h-full w-full object-cover object-top' />
@@ -20,7 +22,7 @@ function HeroSection({trendingMovieData}) {
             </h2>
             <p className='max-w-[70ch] text-lg'>
                 {trendingMovie?.overview.slice(0, 200)}...
-                <Link to={"/"} className='text-sky-500'>more</Link>
+                <Link to={navigateTo} className='text-sky-500'>more</Link>
             </p>
             <div className='flex items-center gap-4 text-lg'>
                 <div className='flex items-center gap-2'>
@@ -38,7 +40,7 @@ function HeroSection({trendingMovieData}) {
             </div>
             <PrimaryBtn
                 title={"Watch Trailer"}
-                navigate={"/"}
+                navigateTo={navigateTo}
             />
         </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../Common/Card'
 
-function MediaCardsContainer({cardsData}) {
+function MediaCardsContainer({cardsData, title}) {
   return (
     <div className='py-4 grid grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] place-items-center gap-y-4'>
         {
@@ -9,6 +9,7 @@ function MediaCardsContainer({cardsData}) {
                 <Card
                 key={index}
                 data = {card}
+                title={title.toLowerCase()}
             />
             ))
         }

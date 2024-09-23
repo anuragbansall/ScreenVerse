@@ -12,9 +12,9 @@ function PopularPage() {
             const response = await axiosInstance.get(`/movie/popular?page=${page}`)
             setPopularData((prevData) => [...prevData, ...response.data.results])
             setPage(prevPage => prevPage + 1)
-            console.log(response.data.results)
+            (response.data.results)
         }catch(err){
-            console.log(err);
+            (err);
         }
     }
 

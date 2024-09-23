@@ -12,9 +12,9 @@ function TrendingPage() {
             const response = await axiosInstance.get(`/trending/all/day?page=${page}`)
             setTrendingData((prevData) => [...prevData,...response.data.results])
             setPage(prevPage => prevPage + 1)
-            console.log(response.data.results)
+            (response.data.results)
         }catch(err){
-            console.log(err);
+            (err);
         }
     }
 

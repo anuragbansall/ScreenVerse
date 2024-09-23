@@ -52,6 +52,7 @@ function MediaCardSection({title, cardsData, fetchData}) {
             >
                 <MediaCardsContainer
                     cardsData = {cardsData}
+                    title={title}
                 />
             </InfiniteScroll>
         </div>

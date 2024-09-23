@@ -12,9 +12,9 @@ function MoviesPage() {
             const response = await axiosInstance.get(`/discover/movie?page=${page}`)
             setMoviesData((prevData) => [...prevData, ...response.data.results])
             setPage(prevPage => prevPage + 1)
-            console.log(response.data.results)
+            (response.data.results)
         }catch(err){
-            console.log(err);
+            (err);
         }
     }
 
@@ -24,7 +24,7 @@ function MoviesPage() {
 
   return (
     <MediaCardSection
-        title={"Movies"}
+        title={"Movie"}
         cardsData={moviesData}
         fetchData={fetchMoviesCardsData}
     />

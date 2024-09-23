@@ -15,11 +15,9 @@ function Home() {
       try{
           const response = await axiosInstance.get(`/trending/all/day`)
           const data = response.data.results
-          
-          console.log(data);
           settrendingMovieData(data);
       }catch(err){
-          console.log(err);
+          (err);
       }
   }
 

@@ -12,9 +12,9 @@ function PeoplePage() {
             const response = await axiosInstance.get(`/trending/person/day?page=${page}`)
             setPeopleData((prevData) => [...prevData, ...response.data.results.filter(data => data.profile_path)])
             setPage(prevPage => prevPage + 1)
-            console.log(response.data.results)
+            (response.data.results)
         }catch(err){
-            console.log(err);
+            (err);
         }
     }
 

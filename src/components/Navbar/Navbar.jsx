@@ -10,7 +10,7 @@ function Navbar() {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log(searchValue);
+        (searchValue);
     };
 
     const handleCloseInputValue = () => {
@@ -55,9 +55,10 @@ function Navbar() {
                 <div className='absolute z-10 flex flex-col gap-2 bottom-0 translate-y-[100%] bg-[#000000cf] backdrop-blur-md max-h-[15rem] w-[80%] overflow-y-auto'>
                     {searchesData.map((item) => {
                         const image = item.poster_path || item.backdrop_path || item.profile_path;
+                        
                         if (image)
                         return (
-                            <div key={item.id} className='flex items-center gap-4 px-6 py-4 cursor-pointer bg-[#ffffff0d] hover:bg-[#ffffff20]' onClick={() => navigate(item.navigate)}>
+                            <div key={item.id} className='flex items-center gap-4 px-6 py-4 cursor-pointer bg-[#ffffff0d] hover:bg-[#ffffff20]' onClick={() => navigate(`/${item.media_type}/details/${item.id}`)}>
                                 <span className='h-[4rem] w-[4rem] shrink-0 bg-zinc-800 rounded-md overflow-hidden'>
                                     <img src={`https://image.tmdb.org/t/p/original/${image}`} alt={item.name || item.title || item.original_name || item.original_title} className='h-full w-full object-cover' />
                                 </span>

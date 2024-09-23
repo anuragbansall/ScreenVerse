@@ -36,12 +36,12 @@ function Sidebar() {
                         {
                             title: "Movies",
                             icon: <RiMovie2Fill />,
-                            navigate: "/movies",
+                            navigate: "/movie",
                         },
                         {
                             title: "TV Shows",
                             icon: <IoTv />,
-                            navigate: "/tv-shows",
+                            navigate: "/tv",
                         },
                         {
                             title: "People",

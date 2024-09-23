@@ -12,9 +12,9 @@ function TVShowsPage() {
             const response = await axiosInstance.get(`/discover/tv?page=${page}`)
             setTvShowsData((prevData) => [...prevData, ...response.data.results])
             setPage(prevPage => prevPage + 1)
-            console.log(response.data.results)
+            (response.data.results)
         }catch(err){
-            console.log(err);
+            (err);
         }
     }
 
@@ -24,7 +24,7 @@ function TVShowsPage() {
 
   return (
     <MediaCardSection
-        title={"TV Shows"}
+        title={"TV"}
         cardsData={tvShowsData}
         fetchData={fetchTvShowsCardsData}
     />

@@ -1,22 +1,21 @@
 import React from 'react'
 import Card from './Card'
 
-function CardsScrollContainer({trendingMovieData, filterOption}) {
-  console.log(trendingMovieData);
+function CardsScrollContainer({movieData, filterOption, isClickable}) {
+  const filteredData = movieData ? movieData.filter(item => item.media_type === filterOption) : []
 
-  const filteredData = trendingMovieData ? trendingMovieData.filter(item => item.media_type === filterOption) : []
-
-  const dataToDisplay = filteredData.length > 0 ? filteredData : trendingMovieData || [];
+  const dataToDisplay = filteredData.length > 0 ? filteredData : movieData || [];
   
   return (
     <div className='w-full py-4 mt-4 flex gap-4 overflow-x-scroll'>
         {
           dataToDisplay &&
-          dataToDisplay.map((item) => (
+          dataToDisplay.map((item, index) => (
             <Card 
-              key={item.id}
+              key={index}
               data = {item}
               navigateTo={"/"}
+              isClickable={isClickable}
             />
           ))
         }

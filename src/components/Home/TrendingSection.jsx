@@ -5,7 +5,6 @@ import Dropdown from '../Common/Dropdown';
 function TrendingSection({trendingMovieData}) {
 
     const [filterOption, setFilterOption] = useState("")
-    console.log(filterOption);
     const options = [
         {
             title: "Filter",
@@ -40,7 +39,7 @@ function TrendingSection({trendingMovieData}) {
             />
         </div>
         <CardsScrollContainer
-            trendingMovieData={trendingMovieData}
+            movieData={trendingMovieData}
             filterOption={filterOption}
         />
     </div>
