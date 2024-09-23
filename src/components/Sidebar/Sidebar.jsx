@@ -16,7 +16,7 @@ function Sidebar() {
     <div className='w-[16rem] flex-shrink-0 h-full border-r-2 border-zinc-700 px-10 pt-10 overflow-y-auto'>
         <div className='flex justify-cente items-center gap-4'>
             <img src={logo} className='h-[2rem]' />
-            <h2 className='text-white font-bold text-2xl'>SCSDB</h2>
+            <h2 className='text-white font-bold text-2xl'>ScreenVerse</h2>
         </div>
         <div className='mt-8'>
             <h3 className='text-white font-semibold text-xl'>New Feeds</h3>
