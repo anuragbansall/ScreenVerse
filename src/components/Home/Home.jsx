@@ -25,10 +25,10 @@ function Home() {
 
     useEffect(() => {
         fetchTrendingMovies()
-        document.title = "SCSBD | Home"
+        document.title = "ScreenVerse | Home"
 
         return () => {
-          document.title = "SCSBD"
+          document.title = "ScreenVerse"
         }
     }, [])
 

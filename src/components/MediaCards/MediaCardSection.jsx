@@ -11,10 +11,10 @@ function MediaCardSection({title, cardsData, fetchData}) {
 
     const navigate = useNavigate()
     useEffect(() => {
-        document.title = `SCSBD | ${title}`
+        document.title = `ScreenVerse | ${title}`
 
         return () => {
-          document.title = "SCSBD"
+          document.title = "ScreenVerse"
         }
     })
 
