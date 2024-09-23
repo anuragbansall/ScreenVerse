@@ -3,9 +3,8 @@ import Sidebar from '../Sidebar/Sidebar'
 import Navbar from '../Navbar/Navbar'
 import HeroSection from './HeroSection'
 import axiosInstance from '../../utils/axios'
-import CardsScrollContainer from '../Common/CardsScrollContainer'
-import Card from '../Common/Card'
 import TrendingSection from './TrendingSection'
+import Loading from '../Common/Loading'
 
 function Home() {
 
@@ -29,6 +28,8 @@ function Home() {
           document.title = "ScreenVerse"
         }
     }, [])
+
+    if(!trendingMovieData) return <Loading />
 
   return (
     <div className='w-full h-full flex overflow-x-hidde'>

@@ -4,6 +4,7 @@ import { Home, MoviesPage, PeoplePage, PopularPage, TrendingPage, TVShowsPage } 
 import MovieDetails from '../components/Movies/MovieDetails'
 import TvDetails from '../components/TVShows/TvDetails'
 import PeopleDetail from '../components/People/PeopleDetail'
+import Loading from '../components/Common/Loading'
 
 function Routing() {
 
@@ -19,6 +20,7 @@ function Routing() {
                 <Route path='/tv/details/:id' element={<TvDetails />} />
                 <Route path='/people' element={<PeoplePage />} />
                 <Route path='/people/details/:id' element={<PeopleDetail/>} />
+                <Route path='/loading' element={<Loading />} />
             </>
         )
     )

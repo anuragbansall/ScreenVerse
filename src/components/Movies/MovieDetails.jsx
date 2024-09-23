@@ -4,14 +4,13 @@ import { fetchMovie } from '../../store/actions/movieAction'
 import { useParams } from 'react-router-dom'
 import DetailsPage from '../Common/DetailsPage'
 import { clearMovies } from '../../store/reducers/movieSlice'
+import Loading from '../Common/Loading'
 
 function MovieDetails() {
 
   const {id} = useParams()
   const dispatch = useDispatch()
   const {data} = useSelector(state => state.movieSlice)
-  console.log(data);
-  
 
   useEffect(() => {
     dispatch(fetchMovie(id))
@@ -21,7 +20,7 @@ function MovieDetails() {
     }
   }, [id])
 
-  if(!data) return <h2>Loading...</h2>
+  if(!data) return <Loading />
 
   return (
     <div>

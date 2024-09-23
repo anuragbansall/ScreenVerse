@@ -10,8 +10,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function DetailsPage({detail, externalids, similar, recommendations, seasons, watchproviders, videos}) {
     // console.log(videos.results.filter(item => item.name === "Official Trailer"));
-    console.log(externalids);
-    
 
     const navigate = useNavigate()
     
@@ -60,7 +58,7 @@ function DetailsPage({detail, externalids, similar, recommendations, seasons, wa
                         <img src={`https://image.tmdb.org/t/p/original${detail.poster_path}`} className='h-full w-full object-cover' />
                     </div>
                     <div className='flex-grow flex flex-col items-start gap-4'>
-                        <h2 className='text-5xl font-bold'>{detail.original_title || detail.original_name} <span className='text-2xl'>({new Date(detail.release_date).getFullYear()})</span></h2>
+                        <h2 className='text-5xl font-bold'>{detail.original_title || detail.original_name} <span className='text-2xl'>({new Date(detail.release_date || detail.last_air_data || detail.first_air_date).getFullYear()})</span></h2>
                         <p>{detail.release_date} {
                             detail.genres.map((item, index) => (
                                 <span key={index}>{item.name}, </span>

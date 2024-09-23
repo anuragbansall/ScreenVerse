@@ -4,6 +4,7 @@ import { fetchTv } from "../../store/actions/tvAction";
 import { clearTvs } from "../../store/reducers/tvSlice";
 import { useEffect } from "react";
 import DetailsPage from "../Common/DetailsPage";
+import Loading from "../Common/Loading";
 
 function TvDetails() {
 
@@ -11,7 +12,6 @@ function TvDetails() {
   const dispatch = useDispatch()
   const {data} = useSelector(state => state.tvSlice)
   console.log(data);
-  
 
   useEffect(() => {
     dispatch(fetchTv(id))
@@ -21,7 +21,7 @@ function TvDetails() {
     }
   }, [id])
 
-  if(!data) return <h2>Loading...</h2>
+  if(!data) return <Loading />
 
   return (
     <div>
