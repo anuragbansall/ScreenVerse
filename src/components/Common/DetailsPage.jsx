@@ -8,7 +8,7 @@ import { FaImdb } from "react-icons/fa";
 import PrimaryBtn from './PrimaryBtn';
 import { Link, useNavigate } from 'react-router-dom';
 
-function DetailsPage({detail, externalids, similar, recommendations, seasons, watchproviders, videos}) {
+function DetailsPage({detail, externalids, similar, recommendations, seasons, watchproviders, videos, title}) {
 
     const navigate = useNavigate()
     
@@ -142,6 +142,7 @@ function DetailsPage({detail, externalids, similar, recommendations, seasons, wa
                         <h2 className='text-3xl font-semibold'>Recommendations & Similar stuff</h2>
                         <CardsScrollContainer
                             movieData={similar.results || recommendations.results}
+                            title={title}
                         />
                     </div>
                 }

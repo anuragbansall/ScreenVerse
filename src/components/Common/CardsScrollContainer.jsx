@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
-function CardsScrollContainer({movieData, filterOption, isClickable}) {
+function CardsScrollContainer({movieData, filterOption, isClickable, title}) {
   const filteredData = movieData ? movieData.filter(item => item.media_type === filterOption) : []
 
   const dataToDisplay = filteredData.length > 0 ? filteredData : movieData || [];
@@ -14,8 +14,8 @@ function CardsScrollContainer({movieData, filterOption, isClickable}) {
             <Card 
               key={index}
               data = {item}
-              navigateTo={"/"}
               isClickable={isClickable}
+              title={title}
             />
           ))
         }

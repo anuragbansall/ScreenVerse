@@ -2,6 +2,8 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Card({ data, title, isClickable = true }) {
+  console.log(data);
+  
   const navigate = useNavigate();
   const image = data.poster_path || data.backdrop_path || data.profile_path;
   const handleClick = () => {

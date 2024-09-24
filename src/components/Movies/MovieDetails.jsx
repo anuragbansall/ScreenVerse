@@ -32,6 +32,7 @@ function MovieDetails() {
         watchproviders = {data.watchproviders}
         similar = {data.similar}
         videos = {data.videos}
+        title="movie"
       />
     </div>
   )
