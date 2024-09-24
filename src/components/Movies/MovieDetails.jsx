@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMovie } from '../../store/actions/movieAction'
-import { useParams } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 import DetailsPage from '../Common/DetailsPage'
 import { clearMovies } from '../../store/reducers/movieSlice'
 import Loading from '../Common/Loading'
@@ -23,7 +23,8 @@ function MovieDetails() {
   if(!data) return <Loading />
 
   return (
-    <div>
+    <div className='relative'>
+      <Outlet />
       <DetailsPage
         detail = {data.detail}
         externalids = {data.externalids}

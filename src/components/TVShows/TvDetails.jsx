@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { fetchTv } from "../../store/actions/tvAction";
 import { clearTvs } from "../../store/reducers/tvSlice";
 import { useEffect } from "react";
@@ -11,7 +11,6 @@ function TvDetails() {
   const {id} = useParams()
   const dispatch = useDispatch()
   const {data} = useSelector(state => state.tvSlice)
-  console.log(data);
 
   useEffect(() => {
     dispatch(fetchTv(id))
@@ -24,7 +23,8 @@ function TvDetails() {
   if(!data) return <Loading />
 
   return (
-    <div>
+    <div className="relative">
+      <Outlet />
       <DetailsPage
         detail = {data.detail}
         externalids = {data.externalids}

@@ -9,7 +9,6 @@ import PrimaryBtn from './PrimaryBtn';
 import { Link, useNavigate } from 'react-router-dom';
 
 function DetailsPage({detail, externalids, similar, recommendations, seasons, watchproviders, videos}) {
-    // console.log(videos.results.filter(item => item.name === "Official Trailer"));
 
     const navigate = useNavigate()
     
