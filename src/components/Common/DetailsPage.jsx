@@ -8,7 +8,7 @@ import { FaImdb } from "react-icons/fa";
 import PrimaryBtn from './PrimaryBtn';
 import { Link, useNavigate } from 'react-router-dom';
 
-function DetailsPage({detail, externalids, similar, recommendations, seasons, watchproviders, videos, title}) {
+function DetailsPage({detail, externalids, similar, recommendations, watchproviders, videos, title}) {
 
     const navigate = useNavigate()
     
@@ -120,13 +120,13 @@ function DetailsPage({detail, externalids, similar, recommendations, seasons, wa
 
 
                 {/* Seasons */}
-                {
-                seasons && 
+                {   
+                detail.seasons && 
                 <div className='w-full'>
                     <hr className='my-8' />
                     <h2 className='text-3xl font-semibold'>Seasons</h2>
                     <CardsScrollContainer
-                        movieData={seasons}
+                        movieData={detail.seasons}
                         isClickable = {false}
                     />
                 </div>
