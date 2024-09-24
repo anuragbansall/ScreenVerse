@@ -15,7 +15,7 @@ function DetailsPage({detail, externalids, similar, recommendations, seasons, wa
     
   return (
     <div className='relative h-screen w-full text-white'>
-        <img src={`https://image.tmdb.org/t/p/original${detail.backdrop_path}`} className='h-full w-full object-cover object-top' />
+        <img src={`https://image.tmdb.org/t/p/original${detail.backdrop_path || detail.poster_path}`} className='h-full w-full object-cover object-top' />
         <div className="absolute top-0 left-0 px-20 py-4 h-full w-full bg-[#0000006c] backdrop-blur-sm overflow-y-auto">
             {/* Top Nav */}
             <div className='w-full py-2 flex items-center gap-6'>
@@ -60,11 +60,18 @@ function DetailsPage({detail, externalids, similar, recommendations, seasons, wa
                     <div className='flex-grow flex flex-col items-start gap-4'>
                         <h2 className='text-5xl font-bold'>{detail.original_title || detail.original_name} <span className='text-2xl'>({new Date(detail.release_date || detail.last_air_data || detail.first_air_date).getFullYear()})</span></h2>
                         <p>{detail.release_date} {
-                            detail.genres.map((item, index) => (
-                                <span key={index}>{item.name}, </span>
-                            ))
-                            }</p>
-                        <p className='text-zinc-300 text-xl font-semibold italic'>{detail.tagline}</p>
+                            detail.genres.map((item) => (
+                                item.name
+                            )).join(", ")
+                            }
+                        </p>
+                        {   detail.runtime &&
+                            <p className='text-lg font-semibold italic'>{detail.runtime} mins</p>
+                        }
+                        {
+                            detail.tagline &&
+                            <p className='text-zinc-300 text-xl font-semibold italic'>{detail.tagline}</p>
+                        }
                         <div>
                         <h3 className='text-2xl my-2'>Overview</h3>
                         <p>{detail.overview}</p>
@@ -72,7 +79,7 @@ function DetailsPage({detail, externalids, similar, recommendations, seasons, wa
 
                         <PrimaryBtn 
                             title="Play Trailer"
-                            navigateTo={"/"}
+                            navigateTo={"trailer"}
                         />
                     </div>
                 </div>
@@ -129,13 +136,16 @@ function DetailsPage({detail, externalids, similar, recommendations, seasons, wa
 
                 {/* recommendations & Similar stuff */}
 
-                <div className='w-full'>
-                    <hr className='my-8' />
-                    <h2 className='text-3xl font-semibold'>Recommendations & Similar stuff</h2>
-                    <CardsScrollContainer
-                        movieData={recommendations.results || similar.results}
-                    />
-                </div>
+                {
+                    (recommendations.results.length || similar.results.length) &&
+                    <div className='w-full'>
+                        <hr className='my-8' />
+                        <h2 className='text-3xl font-semibold'>Recommendations & Similar stuff</h2>
+                        <CardsScrollContainer
+                            movieData={similar.results || recommendations.results}
+                        />
+                    </div>
+                }
             </div>
         </div>
     </div>
