@@ -126,7 +126,7 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
                     <hr className='my-8' />
                     <h2 className='text-3xl font-semibold'>Seasons</h2>
                     <CardsScrollContainer
-                        movieData={detail.seasons}
+                        data={detail.seasons}
                         isClickable = {false}
                     />
                 </div>
@@ -141,7 +141,7 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
                         <hr className='my-8' />
                         <h2 className='text-3xl font-semibold'>Recommendations & Similar stuff</h2>
                         <CardsScrollContainer
-                            movieData={similar.results || recommendations.results}
+                            data={similar.results || recommendations.results}
                             title={title}
                         />
                     </div>

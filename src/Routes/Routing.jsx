@@ -23,8 +23,8 @@ function Routing() {
                 <Route path='/tv/details/:id' element={<TvDetails />} >
                   <Route path='trailer' element={<Trailer />} />
                 </Route>
-                <Route path='/people' element={<PeoplePage />} />
-                <Route path='/people/details/:id' element={<PeopleDetail/>} />
+                <Route path='/person' element={<PeoplePage />} />
+                <Route path='/person/details/:id' element={<PeopleDetail/>} />
                 <Route path='/loading' element={<Loading />} />
             </>
         )

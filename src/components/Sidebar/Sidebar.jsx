@@ -46,7 +46,7 @@ function Sidebar() {
                         {
                             title: "People",
                             icon: <BsPeopleFill />,
-                            navigate: "/people",
+                            navigate: "/person",
                         },
                     ].map((item, index) => (
                         <div 

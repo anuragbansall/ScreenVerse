@@ -39,7 +39,7 @@ function TrendingSection({trendingMovieData}) {
             />
         </div>
         <CardsScrollContainer
-            movieData={trendingMovieData}
+            data={trendingMovieData}
             filterOption={filterOption}
         />
     </div>
