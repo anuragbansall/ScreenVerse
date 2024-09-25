@@ -53,7 +53,7 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
             <div className='w-full 2xl:container mx-auto'>
                 {/* Hero Section */}
                 <div className='w-full py-4 flex gap-20'>
-                    <div className='h-[22rem] w-[15rem] bg-zinc-500 flex-shrink-0'>
+                    <div className='h-[22rem] bg-zinc-500 flex-shrink-0'>
                         <img src={`https://image.tmdb.org/t/p/original${detail.poster_path}`} className='h-full w-full object-cover' />
                     </div>
                     <div className='flex-grow flex flex-col items-start gap-4'>
