@@ -7,7 +7,7 @@ function CardsScrollContainer({data, filterOption, isClickable, title}) {
   const dataToDisplay = filteredData.length > 0 ? filteredData : data || [];
   
   return (
-    <div className='w-full py-4 mt-4 flex gap-4 overflow-x-scroll'>
+    <div className='w-full md:py-4 md:mt-4 flex gap-4 overflow-x-scroll'>
         {
           dataToDisplay &&
           dataToDisplay.map((item, index) => (

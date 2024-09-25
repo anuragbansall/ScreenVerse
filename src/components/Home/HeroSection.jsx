@@ -14,13 +14,13 @@ function HeroSection({trendingMovieData}) {
     const navigateTo = trendingMovie && `/${trendingMovie.media_type}/details/${trendingMovie.id}`
 
   return (
-    <div className='relative w-full h-[22rem] bg-zinc-800'>
+    <div className='relative w-full h-[80vh] max-h-fit sm:h-[22rem] bg-zinc-800'>
         <img src={`https://image.tmdb.org/t/p/original${trendingMovie?.backdrop_path || trendingMovie?.poster_path}`} className='h-full w-full object-cover object-top' />
-        <div className="absolute flex flex-col justify-center items-start gap-2 px-12 top-0 left-0 h-full w-full bg-[#00000083] text-white">
-            <h2 className='line-clamp-1 text-[3rem] font-bold'>
+        <div className="absolute flex flex-col justify-center items-start gap-6 md:gap-2 px-4 md:px-12 top-0 left-0 h-full w-full bg-[#0000009c] text-white">
+            <h2 className='line-clamp-2 md:line-clamp-1 leading-tight text-[3rem] font-bold'>
                 {trendingMovie?.original_title || trendingMovie?.title || trendingMovie?.name}
             </h2>
-            <p className='max-w-[70ch] text-lg'>
+            <p className='max-w-[70ch] text-lg line-clamp-[8]'>
                 {trendingMovie?.overview.slice(0, 200)}...
                 <Link to={navigateTo} className='text-sky-500'>more</Link>
             </p>

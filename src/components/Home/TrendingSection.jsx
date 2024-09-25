@@ -31,7 +31,7 @@ function TrendingSection({trendingMovieData}) {
   return (
     <div className='p-8'>
         <div className='flex justify-between items-center mb-2'>
-            <h2 className='text-zinc-400 text-3xl font-semibold outline-none'>Trending</h2>
+            <h2 className='text-zinc-400 text-2xl md:text-3xl font-semibold outline-none'>Trending</h2>
             <Dropdown 
                 filterOption = {filterOption}
                 setFilterOption = {setFilterOption}

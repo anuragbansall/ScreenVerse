@@ -32,7 +32,7 @@ function Navbar() {
     }, [searchValue]);
 
     return (
-        <div className='relative w-full flex items-center justify-center py-4 px-16'>
+        <div className='relative w-full flex items-center justify-center py-4 px-4 md:px-16'>
             <form className='flex gap-4 items-center text-zinc-400 w-full outline-none bg-zinc-80 border border-zinc-700 px-6 py-2 text-xl rounded-md' onSubmit={handleFormSubmit}>
                 <span className='text-2xl'>
                     <IoSearchOutline />

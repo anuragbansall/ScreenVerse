@@ -30,16 +30,16 @@ function PeopleDetail() {
   if (!data) return <Loading />;
 
   return (
-    <div className="h-screen w-full overflow-y-auto bg-zinc-900 text-white py-6 px-16">
+    <div className="h-screen w-full overflow-y-auto bg-zinc-900 text-white py-6 px-4 md:px-16">
       <div className="2xl:container mx-auto">
         <span className="text-2xl cursor-pointer" onClick={() => navigate(-1)}>
           <IoMdArrowRoundBack />
         </span>
-        <div className="flex gap-16 mt-6">
-          <div className="w-fit max-w-[10rem] shrink-0">
+        <div className="flex flex-col sm:flex-row gap-16 mt-6">
+          <div className="w-full md:w-fit md:max-w-[10rem] shrink-0">
             <img
               src={`https://image.tmdb.org/t/p/original${data.detail.profile_path}`}
-              className="h-[15rem] shadow-xl"
+              className="w-[12rem] max-w-full md:h-[15rem] md:w-fit shadow-xl mx-auto"
             />
             <hr className="my-8" />
             <span className="flex items-center justify-center gap-4">
@@ -111,7 +111,7 @@ function PeopleDetail() {
             <h2 className="text-[3rem] font-semibold">{data.detail.name}</h2>
             <h3 className="text-2xl font-semibold italic my-4">Biography</h3>
             <p>{data.detail.biography || "No Information"}</p>
-            <h3 className="text-2xl font-semibold mt-8">Known For</h3>
+            <h3 className="text-2xl font-semibold mt-8 mb-4 sm:mb-0">Known For</h3>
             <div className="flex">
               <div className="w-0 flex-grow mx-auto">
                 <CardsScrollContainer

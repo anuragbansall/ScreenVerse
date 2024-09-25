@@ -15,7 +15,7 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
   return (
     <div className='relative h-screen w-full text-white'>
         <img src={`https://image.tmdb.org/t/p/original${detail.backdrop_path || detail.poster_path}`} className='h-full w-full object-cover object-top' />
-        <div className="absolute top-0 left-0 px-20 py-4 h-full w-full bg-[#0000006c] backdrop-blur-sm overflow-y-auto">
+        <div className="absolute top-0 left-0 px-4 md:px-20 py-4 h-full w-full bg-[#0000006c] backdrop-blur-sm overflow-y-auto">
             {/* Top Nav */}
             <div className='w-full py-2 flex items-center gap-6'>
                 {
@@ -52,12 +52,12 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
             {/* main body */}
             <div className='w-full 2xl:container mx-auto'>
                 {/* Hero Section */}
-                <div className='w-full py-4 flex gap-20'>
-                    <div className='h-[22rem] bg-zinc-500 flex-shrink-0'>
+                <div className='w-full py-4 flex flex-col md:flex-row items-center gap-6 md:gap-20'>
+                    <div className='w-[15rem] md:h-[22rem] md:w-fit max-w-full bg-zinc-500 flex-shrink-0'>
                         <img src={`https://image.tmdb.org/t/p/original${detail.poster_path}`} className='h-full w-full object-cover' />
                     </div>
-                    <div className='flex-grow flex flex-col items-start gap-4'>
-                        <h2 className='text-5xl font-bold'>{detail.original_title || detail.original_name} <span className='text-2xl'>({new Date(detail.release_date || detail.last_air_data || detail.first_air_date).getFullYear()})</span></h2>
+                    <div className='flex-grow flex flex-col items-start gap-2 md:gap-4'>
+                        <h2 className='text-4xl text-center md:text-start md:text-5xl font-bold'>{detail.original_title || detail.original_name} <span className='text-2xl'>({new Date(detail.release_date || detail.last_air_data || detail.first_air_date).getFullYear()})</span></h2>
                         <p>{detail.release_date} {
                             detail.genres.map((item) => (
                                 item.name
@@ -87,9 +87,9 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
 
                 {
                     watchproviders?.rent && 
-                    <div className='flex items-center gap-8 my-4'>
+                    <div className='flex items-center gap-4 md:gap-8 my-4'>
                     <p>Available on Rent</p>
-                    <div className='flex items-center gap-4'>
+                    <div className='flex flex-wrap items-center gap-4'>
                         {
                             watchproviders.rent.map((item, index) => (
                                 <span key={index} className='inline-block h-[2rem] w-[2rem] rounded-md overflow-hidden'>
@@ -103,9 +103,9 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
 
                 {
                     watchproviders?.buy &&
-                    <div className='flex items-center gap-8 my-4'>
+                    <div className='flex items-center gap-4 md:gap-8 my-4'>
                     <p>Available to Buy</p>
-                    <div className='flex items-center gap-4'>
+                    <div className='flex flex-wrap items-center gap-4'>
                         {
                             watchproviders.buy.map((item, index) => (
                                 <span key={index} className='inline-block h-[2rem] w-[2rem] rounded-md overflow-hidden'>
@@ -139,7 +139,7 @@ function DetailsPage({detail, externalids, similar, recommendations, watchprovid
                     (recommendations.results.length || similar.results.length) &&
                     <div className='w-full'>
                         <hr className='my-8' />
-                        <h2 className='text-3xl font-semibold'>Recommendations & Similar stuff</h2>
+                        <h2 className='text-2xl md:text-3xl my-4 font-semibold'>Recommendations & Similar stuff</h2>
                         <CardsScrollContainer
                             data={similar.results || recommendations.results}
                             title={title}

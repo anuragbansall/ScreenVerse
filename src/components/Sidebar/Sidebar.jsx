@@ -13,7 +13,7 @@ function Sidebar() {
     const navigate = useNavigate()
 
   return (
-    <div className='w-[16rem] flex-shrink-0 h-full border-r-2 border-zinc-700 px-10 pt-10 overflow-y-auto'>
+    <div className='w-[16rem] flex-shrink-0 h-full border-r-2 border-zinc-700 px-10 pt-10 overflow-y-auto hidden lg:block'>
         <div className='flex justify-cente items-center gap-4'>
             <img src={logo} className='h-[2rem]' />
             <h2 className='text-white font-bold text-2xl'>ScreenVerse</h2>

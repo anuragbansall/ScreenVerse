@@ -23,15 +23,17 @@ function Trailer() {
                 <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${trailerToDisplay.key}`}
                 controls={true}
+                width={"90vw"}
+                height={"80vh"}
                 />
-                <span className='absolute top-0 right-0 translate-x-[2rem] -translate-y-[2rem] text-white text-[2rem] cursor-pointer' onClick={() => navigate(-1)}>
+                <span className='absolute top-0 right-0 md:translate-x-[2rem] -translate-y-[2rem] text-white text-[2rem] cursor-pointer' onClick={() => navigate(-1)}>
                     <IoCloseCircleSharp />
                 </span>
             </div>
             :
             <div className='relative'>
                 <p className="text-white text-xl">No trailer available</p>
-                <span className='absolute top-0 right-0 translate-x-[2rem] -translate-y-[2rem] text-white text-[2rem] cursor-pointer' onClick={() => navigate(-1)}>
+                <span className='absolute top-0 right-0 md:translate-x-[2rem] -translate-y-[2rem] text-white text-[2rem] cursor-pointer' onClick={() => navigate(-1)}>
                     <IoCloseCircleSharp />
                 </span>
             </div>
