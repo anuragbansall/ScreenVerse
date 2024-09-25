@@ -35,7 +35,7 @@ function PeopleDetail() {
         <span className="text-2xl cursor-pointer" onClick={() => navigate(-1)}>
           <IoMdArrowRoundBack />
         </span>
-        <div className="flex flex-col sm:flex-row gap-16 mt-6">
+        <div className="flex flex-col md:flex-row gap-16 mt-6">
           <div className="w-full md:w-fit md:max-w-[10rem] shrink-0">
             <img
               src={`https://image.tmdb.org/t/p/original${data.detail.profile_path}`}
