@@ -14,7 +14,7 @@ function Card({ data, title, isClickable = true }) {
   return (
     image && (
       <div
-        className='h-[15rem] sm:h-[18rem]  hover:scale-105 duration-200 rounded-md overflow-hidden flex-shrink-0 bg-[#18181B] cursor-pointer shadow-lg shadow-zinc-950'
+        className='h-[18rem]  hover:scale-105 duration-200 rounded-md overflow-hidden flex-shrink-0 bg-[#18181B] cursor-pointer shadow-lg shadow-zinc-950'
         onClick={handleClick}
       >
         <img
